@@ -21,6 +21,7 @@ namespace RPNCalculator
     {
         public RPNStack ()
         {
+            _stack = new Stack();
             _errorMessage = "";
         }
 
