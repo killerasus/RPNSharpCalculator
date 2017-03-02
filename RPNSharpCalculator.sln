@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorApp", "Calculator
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPNCalculator", "RPNCalculator\RPNCalculator.csproj", "{8F72801F-B6F4-4CC2-B564-DBD83A79D244}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPNCalculatorUnitTests", "RPNCalculatorUnitTests\RPNCalculatorUnitTests.csproj", "{72404987-0838-4B9F-81EB-7ADB64B4DAB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,6 +17,10 @@ Global
 		{030F4B49-0E26-416A-AEDD-925902B6604D}.Debug|x86.Build.0 = Debug|x86
 		{030F4B49-0E26-416A-AEDD-925902B6604D}.Release|x86.ActiveCfg = Release|x86
 		{030F4B49-0E26-416A-AEDD-925902B6604D}.Release|x86.Build.0 = Release|x86
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Debug|x86.Build.0 = Debug|Any CPU
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Release|x86.ActiveCfg = Release|Any CPU
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Release|x86.Build.0 = Release|Any CPU
 		{8F72801F-B6F4-4CC2-B564-DBD83A79D244}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8F72801F-B6F4-4CC2-B564-DBD83A79D244}.Debug|x86.Build.0 = Debug|Any CPU
 		{8F72801F-B6F4-4CC2-B564-DBD83A79D244}.Release|x86.ActiveCfg = Release|Any CPU

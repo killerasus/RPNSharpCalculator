@@ -42,6 +42,9 @@ namespace RPNCalculator
     /// </summary>
     public class RPNStack
     {
+		/// <summary>
+		/// Initializes a new instance of the <see cref="RPNCalculator.RPNStack"/> class.
+		/// </summary>
         public RPNStack ()
         {
             _stack = new Stack();
@@ -49,7 +52,7 @@ namespace RPNCalculator
         }
 
         /// <summary>
-        /// Push the specified value into the stack
+        /// Pushes the specified value into the stack
         /// </summary>
         /// <param name="val">Value.</param>
         public void PushValue(float val)
@@ -58,7 +61,7 @@ namespace RPNCalculator
         }
 
         /// <summary>
-        /// Execute operation on stack. Sets ErrorMessage if operation is unsuccessful.
+        /// Executes operation on stack. Sets ErrorMessage if operation is unsuccessful.
         /// </summary>
         /// <param name="operation">An operation</param>
         /// <returns>True if operation successful, False otherwise</returns>
