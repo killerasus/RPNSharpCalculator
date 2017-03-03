@@ -49,8 +49,16 @@ namespace RPNCalculatorUnitTests
 		{
 			_stack.PushValue (2);
 			_stack.PushValue (3);
-			Assert.AreEqual (_stack.Pop (), 3);
-			Assert.AreEqual (_stack.Pop (), 2);
+			Assert.AreEqual (3, _stack.Pop ());
+			Assert.AreEqual (2, _stack.Pop ());
+		}
+
+		[Test()]
+		public void SumOneElement()
+		{
+			_stack.PushValue (2);
+			Assert.False(_stack.PushOperation (Operations.SUM));
+			Assert.AreEqual ( "Stack has less than 2 elements.", _stack.ErrorMessage);
 		}
 
 		[Test()]
@@ -58,19 +66,26 @@ namespace RPNCalculatorUnitTests
 		{
 			_stack.PushValue (2);
 			_stack.PushValue (3);
-			_stack.PushOperation (Operations.SUM);
-			Assert.AreEqual (_stack.Pop (), 5);
+			Assert.True( _stack.PushOperation (Operations.SUM) );
+			Assert.AreEqual (5, _stack.Pop ());
 		}
 
 		[Test()]
 		public void Negative()
 		{
 			_stack.PushValue (2);
-			_stack.PushOperation (Operations.UNARY_MINUS);
-			Assert.AreEqual (_stack.Pop (), -2);
+			Assert.True( _stack.PushOperation (Operations.UNARY_MINUS) );
+			Assert.AreEqual (-2, _stack.Pop ());
 			_stack.PushValue (-100);
-			_stack.PushOperation (Operations.UNARY_MINUS);
-			Assert.AreEqual (_stack.Pop (), 100);
+			Assert.True( _stack.PushOperation (Operations.UNARY_MINUS) );
+			Assert.AreEqual (100, _stack.Pop ());
+		}
+
+		[Test()]
+		public void NegativeEmptyStack()
+		{
+			Assert.False( _stack.PushOperation (Operations.UNARY_MINUS) );
+			Assert.AreEqual ("Stack has less than 1 elements.", _stack.ErrorMessage);
 		}
 
 		[Test()]
@@ -78,9 +93,19 @@ namespace RPNCalculatorUnitTests
 		{
 			_stack.PushValue (2);
 			_stack.PushValue (3);
-			_stack.PushOperation (Operations.UNARY_MINUS);
-			_stack.PushOperation (Operations.SUM);
-			Assert.AreEqual (_stack.Pop (), -1);
+			Assert.True( _stack.PushOperation (Operations.UNARY_MINUS) );
+			Assert.True( _stack.PushOperation (Operations.SUM) );
+			Assert.AreEqual (-1, _stack.Pop ());
+		}
+
+		[Test()]
+		public void DivisionByZero()
+		{
+			_stack.PushValue (0);
+			_stack.PushValue (20);
+			Assert.False (_stack.PushOperation (Operations.DIV));
+			Assert.AreEqual ("Division by 0.", _stack.ErrorMessage);
+			Assert.IsNaN (_stack.Pop ());
 		}
 	}
 
