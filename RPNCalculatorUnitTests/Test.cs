@@ -119,8 +119,9 @@ namespace RPNCalculatorUnitTests
 		public void SquareRootNegativeElement()
 		{
 			_stack.PushValue (-4);
-			Assert.True (_stack.PushOperation (Operations.SQUARE_ROOT));
-			Assert.AreEqual (Math.Sqrt (-4), _stack.Pop());
+			Assert.False (_stack.PushOperation (Operations.SQUARE_ROOT));
+			Assert.AreEqual ("Square root of negative number.", _stack.ErrorMessage);
+			Assert.IsNaN (_stack.Pop ());
 		}
 
 		[Test()]
@@ -128,7 +129,7 @@ namespace RPNCalculatorUnitTests
 		{
 			_stack.PushValue (4);
 			Assert.True (_stack.PushOperation (Operations.SQUARE_ROOT));
-			Assert.AreEqual (Math.Sqrt (4), _stack.Pop ());
+			Assert.AreEqual ((float)Math.Sqrt (4), (float)_stack.Pop ());
 		}
 	}
 

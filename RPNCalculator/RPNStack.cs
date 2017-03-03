@@ -21,6 +21,7 @@
 // SOFTWARE.
 //
 
+using System;
 using System.Collections;
 
 namespace RPNCalculator
@@ -145,6 +146,27 @@ namespace RPNCalculator
                         }
                     }
                     break;
+				case Operations.SQUARE_ROOT:
+				{
+					if (_stack.Count < 1)
+					{
+						ErrorMessage = "Stack has less than 1 elements.";
+						return false;
+					}
+					else
+					{
+						float val = (float) _stack.Pop();
+
+						if (val < 0.0f) {
+							ErrorMessage = "Square root of negative number.";
+							_stack.Push (float.NaN);
+							return false;
+						}
+
+						_stack.Push((float)Math.Sqrt((double)val));
+					}
+				}
+				break;
                 default:
                     ErrorMessage = "Unknown operation.";
                     return false;
@@ -154,9 +176,9 @@ namespace RPNCalculator
         }
 
         /// <summary>
-        /// Pops the top of the stack
+        /// Pops the top of the stack.
         /// </summary>
-        /// <returns>Value on top of the stack, NaN if no value is pushed</returns>
+        /// <returns>Value on top of the stack, NaN if no value is pushed.</returns>
         public float Pop( )
         {
             if(_stack.Count > 0)
@@ -166,6 +188,20 @@ namespace RPNCalculator
             
             return float.NaN;
         }
+
+		/// <summary>
+		/// Peeks the top of the stack.
+		/// </summary>
+		/// <returns>Value on top of the stack, NaN if no value is pushed.</returns>
+		public float Peek()
+		{
+			if(_stack.Count > 0)
+			{
+				return (float) _stack.Peek();
+			}
+
+			return float.NaN;
+		}
 
         /// <summary>
         /// Gets the error message, if any.
@@ -184,12 +220,12 @@ namespace RPNCalculator
         }
 
         /// <summary>
-        /// Stack collection used to store values
+        /// Stack collection used to store values.
         /// </summary>
         private Stack _stack;
 
         /// <summary>
-        /// Holds the error message for an unsuccessful operation
+        /// Holds the error message for an unsuccessful operation.
         /// </summary>
         private string _errorMessage;
     }
