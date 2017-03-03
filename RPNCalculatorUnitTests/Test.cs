@@ -107,6 +107,29 @@ namespace RPNCalculatorUnitTests
 			Assert.AreEqual ("Division by 0.", _stack.ErrorMessage);
 			Assert.IsNaN (_stack.Pop ());
 		}
+
+		[Test()]
+		public void SquareRootNoElement()
+		{
+			Assert.False( _stack.PushOperation (Operations.SQUARE_ROOT) );
+			Assert.AreEqual ("Stack has less than 1 elements.", _stack.ErrorMessage);
+		}
+
+		[Test()]
+		public void SquareRootNegativeElement()
+		{
+			_stack.PushValue (-4);
+			Assert.True (_stack.PushOperation (Operations.SQUARE_ROOT));
+			Assert.AreEqual (sqrt (-4), _stack.Pop());
+		}
+
+		[Test()]
+		public void SuqareRootOf4()
+		{
+			_stack.PushValue (4);
+			Assert.True (_stack.PushOperation (Operations.SQUARE_ROOT));
+			Assert.AreEqual (sqrt (4), _stack.Pop ());
+		}
 	}
 
 }
