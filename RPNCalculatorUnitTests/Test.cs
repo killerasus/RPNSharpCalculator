@@ -120,15 +120,15 @@ namespace RPNCalculatorUnitTests
 		{
 			_stack.PushValue (-4);
 			Assert.True (_stack.PushOperation (Operations.SQUARE_ROOT));
-			Assert.AreEqual (sqrt (-4), _stack.Pop());
+			Assert.AreEqual (Math.Sqrt (-4), _stack.Pop());
 		}
 
 		[Test()]
-		public void SuqareRootOf4()
+		public void SquareRootOf4()
 		{
 			_stack.PushValue (4);
 			Assert.True (_stack.PushOperation (Operations.SQUARE_ROOT));
-			Assert.AreEqual (sqrt (4), _stack.Pop ());
+			Assert.AreEqual (Math.Sqrt (4), _stack.Pop ());
 		}
 	}
 
