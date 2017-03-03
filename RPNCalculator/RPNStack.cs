@@ -34,7 +34,8 @@ namespace RPNCalculator
         SUB,
         DIV,
         MUL,
-        UNARY_MINUS
+        UNARY_MINUS,
+		SQUARE_ROOT
     };
 
     /// <summary>
