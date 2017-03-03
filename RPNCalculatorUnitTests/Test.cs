@@ -22,15 +22,26 @@
 //
 using NUnit.Framework;
 using System;
+using RPNCalculator;
 
 namespace RPNCalculatorUnitTests
 {
 	[TestFixture()]
 	public class Test
 	{
-		[Test()]
-		public void TestCase ()
+		private RPNStack _stack;
+
+		[SetUp()]
+		public void Setup()
 		{
+			_stack = new RPNStack();
+		}
+
+		[Test()]
+		public void TestIsEmptyOnCreation ()
+		{
+			float result = _stack.Pop();
+			Assert.IsNaN(result);
 		}
 	}
 

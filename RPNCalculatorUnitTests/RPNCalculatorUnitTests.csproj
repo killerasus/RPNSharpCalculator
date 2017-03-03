@@ -38,4 +38,10 @@
     <Compile Include="Test.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\RPNCalculator\RPNCalculator.csproj">
+      <Project>{8F72801F-B6F4-4CC2-B564-DBD83A79D244}</Project>
+      <Name>RPNCalculator</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
