@@ -38,10 +38,49 @@ namespace RPNCalculatorUnitTests
 		}
 
 		[Test()]
-		public void TestIsEmptyOnCreation ()
+		public void IsEmptyOnCreation()
 		{
 			float result = _stack.Pop();
 			Assert.IsNaN(result);
+		}
+
+		[Test()]
+		public void TwoElementsOnStack()
+		{
+			_stack.PushValue (2);
+			_stack.PushValue (3);
+			Assert.AreEqual (_stack.Pop (), 3);
+			Assert.AreEqual (_stack.Pop (), 2);
+		}
+
+		[Test()]
+		public void SumTwoElements()
+		{
+			_stack.PushValue (2);
+			_stack.PushValue (3);
+			_stack.PushOperation (Operations.SUM);
+			Assert.AreEqual (_stack.Pop (), 5);
+		}
+
+		[Test()]
+		public void Negative()
+		{
+			_stack.PushValue (2);
+			_stack.PushOperation (Operations.UNARY_MINUS);
+			Assert.AreEqual (_stack.Pop (), -2);
+			_stack.PushValue (-100);
+			_stack.PushOperation (Operations.UNARY_MINUS);
+			Assert.AreEqual (_stack.Pop (), 100);
+		}
+
+		[Test()]
+		public void SumTwoElementsNegative()
+		{
+			_stack.PushValue (2);
+			_stack.PushValue (3);
+			_stack.PushOperation (Operations.UNARY_MINUS);
+			_stack.PushOperation (Operations.SUM);
+			Assert.AreEqual (_stack.Pop (), -1);
 		}
 	}
 
