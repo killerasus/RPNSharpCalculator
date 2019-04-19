@@ -1,7 +1,12 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2005
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorApp", "CalculatorApp\CalculatorApp.csproj", "{030F4B49-0E26-416A-AEDD-925902B6604D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8F72801F-B6F4-4CC2-B564-DBD83A79D244} = {8F72801F-B6F4-4CC2-B564-DBD83A79D244}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPNCalculator", "RPNCalculator\RPNCalculator.csproj", "{8F72801F-B6F4-4CC2-B564-DBD83A79D244}"
 EndProject
@@ -17,14 +22,20 @@ Global
 		{030F4B49-0E26-416A-AEDD-925902B6604D}.Debug|x86.Build.0 = Debug|x86
 		{030F4B49-0E26-416A-AEDD-925902B6604D}.Release|x86.ActiveCfg = Release|x86
 		{030F4B49-0E26-416A-AEDD-925902B6604D}.Release|x86.Build.0 = Release|x86
-		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Debug|x86.Build.0 = Debug|Any CPU
-		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Release|x86.ActiveCfg = Release|Any CPU
-		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Release|x86.Build.0 = Release|Any CPU
 		{8F72801F-B6F4-4CC2-B564-DBD83A79D244}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{8F72801F-B6F4-4CC2-B564-DBD83A79D244}.Debug|x86.Build.0 = Debug|Any CPU
 		{8F72801F-B6F4-4CC2-B564-DBD83A79D244}.Release|x86.ActiveCfg = Release|Any CPU
 		{8F72801F-B6F4-4CC2-B564-DBD83A79D244}.Release|x86.Build.0 = Release|Any CPU
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Debug|x86.Build.0 = Debug|Any CPU
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Release|x86.ActiveCfg = Release|Any CPU
+		{72404987-0838-4B9F-81EB-7ADB64B4DAB4}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A4605D3-1060-46DB-8983-FB3DBBEDB527}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = CalculatorApp\CalculatorApp.csproj

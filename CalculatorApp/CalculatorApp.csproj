@@ -34,46 +34,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="atk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\atk-sharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\atk-sharp.dll</HintPath>
     </Reference>
     <Reference Include="cairo-sharp, Version=1.12.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\cairo-sharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\cairo-sharp.dll</HintPath>
     </Reference>
     <Reference Include="gdk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\gdk-sharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\gdk-sharp.dll</HintPath>
     </Reference>
     <Reference Include="gio-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\gio-sharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\gio-sharp.dll</HintPath>
     </Reference>
     <Reference Include="glib-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\glib-sharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\glib-sharp.dll</HintPath>
     </Reference>
     <Reference Include="gtk-dotnet, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\gtk-dotnet.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\gtk-dotnet.dll</HintPath>
     </Reference>
     <Reference Include="gtk-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\gtk-sharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\gtk-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Posix, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
       <HintPath>..\packages\Mono.Posix.4.0.0.0\lib\net40\Mono.Posix.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="pango-sharp, Version=3.0.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f, processorArchitecture=MSIL">
-      <HintPath>..\packages\gtk-sharp3.3.22.0.0\lib\net40\pango-sharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\gtk-sharp-3.3.22.6.4\lib\net40\pango-sharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
-      <SpecificVersion>False</SpecificVersion>
-      <Package>glade-sharp-2.0</Package>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="gtk-gui\gui.stetic">
@@ -91,11 +79,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\gtk-sharp3.3.22.0.0\build\gtk-sharp3.targets" Condition="Exists('..\packages\gtk-sharp3.3.22.0.0\build\gtk-sharp3.targets')" />
+  <Import Project="..\packages\gtk-sharp-3.3.22.6.4\build\net40\gtk-sharp-3.targets" Condition="Exists('..\packages\gtk-sharp-3.3.22.6.4\build\net40\gtk-sharp-3.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\gtk-sharp3.3.22.0.0\build\gtk-sharp3.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gtk-sharp3.3.22.0.0\build\gtk-sharp3.targets'))" />
+    <Error Condition="!Exists('..\packages\gtk-sharp-3.3.22.6.4\build\net40\gtk-sharp-3.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\gtk-sharp-3.3.22.6.4\build\net40\gtk-sharp-3.targets'))" />
   </Target>
 </Project>
